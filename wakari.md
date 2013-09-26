@@ -1,16 +1,20 @@
-Adventures with Wakari. 
+# Adventures with Wakari. 
 
-Rich and We've made a lot of progress, but the path is littered with blood and tears. Fortunately for you, that's blood and tears we'll be sparing everyone else.
+Sep 26, 2013: Rich and I have made a lot of progress, but the path is littered with blood and tears. Fortunately for you, that's blood and tears we'll be sparing everyone else.
 
 A brief list of the packages we've got going and have been able to share with each other via custom-built environments:
 scipy, numpy, matplotlib, pandas, netcdf4, shapely, OWSLib, lxml, suds, requests, SPARQLWrapper, ulmo, cartopy
 Here I didn't list lower-level dependencies.
 
-I have an environment that includes all of those packages except cartopy. Rich has one with cartopy, but not lxml, suds, requests, SPARQLWrapper, ulmo. Rich is working on IRIS.
+* I have an environment that includes all of those packages except cartopy. 
 
-paegan (and therefore pyoos) so far is a no go, but we haven't tried very hard.
+* Rich has one with cartopy, but not lxml, suds, requests, SPARQLWrapper, ulmo. 
 
-We have several public IPython notebooks that you can access and run if you have a Wakari account. 
+* Rich is working on IRIS.
+
+* paegan (and therefore pyoos) so far is a no go, but we haven't tried very hard.
+
+* We have several public IPython notebooks that you can access and run if you have a Wakari account. 
 
 With my environment ("ioos_em_2"):
 
