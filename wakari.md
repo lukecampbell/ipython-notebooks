@@ -16,7 +16,7 @@ We aren't listing the lower-level dependencies.
 
 ##  IPython notebooks that you can access and run 
 
-1. Access this notebook bundle that will install my ulmo/OWSLib environment, and demonstrates ulmo, accessing USGS river level via CUAHSI HIS services:
+* Access this notebook bundle that will install my ulmo/OWSLib environment, and demonstrates ulmo, accessing USGS river level via CUAHSI HIS services.
 https://www.wakari.io/sharing/bundle/emayorga/ulmo_usgsdata_viacuahsi
 
 Once you have that env installed, you can run the following notebooks, just make sure to select the `ulmo_usgsdata_viacuahsi` environment 
