@@ -15,3 +15,5 @@ pip install OWSLib   # Successfully installed OWSLib
 pip install SPARQLWrapper   # Successfully installed SPARQLWrapper rdflib isodate html5lib
 pip install ulmo   # Successfully installed ulmo appdirs beautifulsoup4 mock suds
 ```
+
+6. Create a notebook and select this new environment from the dropdown inside the notebook page.   When you then share this notebook (by clicking the "Share" button next to the notebook name in the file browser), you will have the opportunity to include the custom environment.
