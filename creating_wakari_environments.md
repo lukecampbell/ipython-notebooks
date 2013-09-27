@@ -1,5 +1,4 @@
-Here's what Emilio did to create his environment.
-
+## Emilio's method to create an environment
 1. In Wakari, click the "Terminals" tab, then choose "Shell" from the left dropdown menu, and "np17py27-1.5" from the right dropdown menu.  Then click the "+Tab" button to create a np17py27-1.5 Shell in a new tab.
 
 2. In this new terminal (should say "shell:np17py27-1.5:/user_home/<your username>" at the top), create a new conda environment with all the conda packages you need:
@@ -17,10 +16,19 @@ pip install ulmo   # Successfully installed ulmo appdirs beautifulsoup4 mock sud
 
 6. Create a notebook and select this new environment from the dropdown inside the notebook page.   When you then share this notebook (by clicking the "Share" button next to the notebook name in the file browser), you will have the opportunity to include the custom environment.
 
-Rich did pretty much the same thing to install Cartopy, with a few differences.  One issue was creating static versions of libraries that were not on the system and had to built locally.  Luckily libgeos was not a problem because it was on the system, but proj4 required special treatment.  In a Wakari shell terminal, I did:
+## Rich's method to create an environment
+Rich did pretty much the same thing as Emilio with a few differences.  
+
+* A different basic conda environment:
 
 ```
 conda create -n ioos_env dateutil=1.5 pandas matplotlib netcdf4 ipython shapely cython pip pytz
+```
+
+* Handling of addiitional library dependencies. 
+Cartopy has a dependency on the proj4 library that was not on the system and had to built locally (can't just do sudo install libproj-dev) on wakari.
+So with help from Ed Campbell, in a Wakari shell terminal, I did:
+
 ```
 cd $HOME
 mkdir proj4_static
