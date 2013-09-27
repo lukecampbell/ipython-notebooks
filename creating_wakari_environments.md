@@ -1,4 +1,4 @@
-## Emilio's method to create an environment
+## Emilio's method to create an environment for `ulmo`
 1. In Wakari, click the "Terminals" tab, then choose "Shell" from the left dropdown menu, and "np17py27-1.5" from the right dropdown menu.  Then click the "+Tab" button to create a np17py27-1.5 Shell in a new tab.
 
 2. In this new terminal (should say "shell:np17py27-1.5:/user_home/<your username>" at the top), create a new conda environment with all the conda packages you need:
@@ -16,7 +16,7 @@ pip install ulmo   # Successfully installed ulmo appdirs beautifulsoup4 mock sud
 
 6. Create a notebook and select this new environment from the dropdown inside the notebook page.   When you then share this notebook (by clicking the "Share" button next to the notebook name in the file browser), you will have the opportunity to include the custom environment.
 
-## Rich's method to create an environment
+## Rich's method to create an environment for `Cartopy`
 Rich did pretty much the same thing as Emilio with a few differences.  
 
 * A different basic conda environment:
