@@ -16,3 +16,25 @@ pip install ulmo   # Successfully installed ulmo appdirs beautifulsoup4 mock sud
 ```
 
 6. Create a notebook and select this new environment from the dropdown inside the notebook page.   When you then share this notebook (by clicking the "Share" button next to the notebook name in the file browser), you will have the opportunity to include the custom environment.
+
+Rich did pretty much the same thing to install Cartopy, with a few differences.  One issue was creating static versions of libraries that were not on the system and had to built locally.  Luckily libgeos was not a problem because it was on the system, but proj4 required special treatment.  In a Wakari shell terminal, I did:
+
+```
+conda create -n ioos_env dateutil=1.5 pandas matplotlib netcdf4 ipython shapely cython pip pytz
+```
+cd $HOME
+mkdir proj4_static
+mkdir ioos
+cd ioos
+wget http://download.osgeo.org/proj/proj-4.8.0.tar.gz
+tar xvfz proj-4.8.0.tar.gz
+cd proj4-4.8.0
+CFLAGS=-fPIC ./configure --disable-shared --prefix=$HOME/proj4_static
+make install
+cd ..
+git clone https://github.com/SciTools/cartopy.git
+cd cartopy
+python setup.py build_ext -L$HOME/proj4_static/lib -I$HOME/proj4_static/include
+python setup.py build
+python setup.py install
+```
