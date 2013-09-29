@@ -22,7 +22,7 @@ Rich did pretty much the same thing as Emilio with a few differences.
 * A different basic conda environment:
 
 ```
-conda create -n ioos_env dateutil=1.5 pandas matplotlib netcdf4 ipython shapely cython pip pytz
+conda create -n ioos_env dateutil=1.5 pandas matplotlib netcdf4 ipython shapely cython pip pytz geos shapely
 ```
 
 * Handling of addiitional library dependencies. 
@@ -30,6 +30,7 @@ Cartopy has a dependency on the proj4 library that was not on the system and had
 So with help from Ed Campbell, in a Wakari shell terminal, I did:
 
 ```
+pip install pyshp
 cd $HOME
 mkdir proj4_static
 mkdir ioos
@@ -43,6 +44,38 @@ cd ..
 git clone https://github.com/SciTools/cartopy.git
 cd cartopy
 python setup.py build_ext -L$HOME/proj4_static/lib -I$HOME/proj4_static/include
+python setup.py install
+```
+
+Installing udunits
+
+```
+cd $HOME
+wget ftp://ftp.unidata.ucar.edu/pub/udunits/udunits-2.1.24.tar.gz
+tar xzf udunits-2.1.24.tar.gz
+cd udunits
+./configure --prefix=$HOME/udunits_shared
+make install
+cd $HOME && rm -rf udunits udunits-2.1.24.tar.gz
+```
+
+Installing Iris
+```
+pip install pyke
+cd $HOME
+git clone https://github.com/SciTools/iris.git
+cd iris
+cp lib/iris/etc/site.cfg.template lib/iris/etc/site.cfg
+# **edit lib/iris/etc/site.cfg such that:**
+cat lib/iris/etc/site.cfg
+[System]
+udunits2_path = /user_home/w_pelson/udunits_shared/lib/libudunits2.so
+
+python setup.py std_names
+# Remove the custom build_py command - it is failing for no good reason (bug in Iris/Distutils?)
 python setup.py build
 python setup.py install
 ```
+
+
+
