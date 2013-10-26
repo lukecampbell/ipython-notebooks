@@ -1,3 +1,13 @@
+## Installing binary libraries shareable with the environment
+(From Rich) Install the binary libraries in the python lib directory for that custom env. So, the steps are:
+
+1. Create "ioos" env
+2. Install binary library:
+```
+./configure --prefix=/opt/anaconda/envs/ioos
+make install
+```
+
 ## Emilio's method to create an environment for `ulmo`
 1. In Wakari, click the "Terminals" tab, then choose "Shell" from the left dropdown menu, and "np17py27-1.5" from the right dropdown menu.  Then click the "+Tab" button to create a np17py27-1.5 Shell in a new tab.
 
