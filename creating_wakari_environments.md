@@ -88,17 +88,20 @@ python setup.py build
 python setup.py install
 ```
 
-Trying again with Iris:
-``` 
-create a terminal using the np17py27-1.5 environment, and then in that terminal, type:
-conda create -n iris dateutil=1.5 pandas matplotlib netcdf4 ipython shapely cython pip pytz scipy lxml nose sphinx hdf5 zlib curl distribute libpng
+# Rich Trying again with Iris:
 
+Create a terminal using the np17py27-1.5 environment, and then in that terminal, type:
+```
+conda create -n iris dateutil=1.5 pandas matplotlib netcdf4 ipython shapely cython pip pytz scipy lxml nose sphinx hdf5 zlib curl distribute libpng
+```
 log out, log back in, create a terminal using the "iris" environment
 
 click the gear icon and set the default environment to Iris.
 
 Create a terminal in the "iris environment. 
 
+Then do:
+```
 mkdir iris
 cd iris
 wget -O cartopy.v0.9.0.tgz https://github.com/SciTools/cartopy/archive/v0.9.0.tar.gz
