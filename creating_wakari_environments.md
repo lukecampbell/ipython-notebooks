@@ -93,7 +93,7 @@ python setup.py install
 Create a terminal using the np17py27-1.5 environment, and then in that terminal, type:
 ```
 conda create -n iris dateutil=1.5 pandas matplotlib netcdf4 ipython\
-shapely cython pip pytz scipy lxml nose sphinx hdf5 zlib curl distribute libpng
+shapely cython pip pytz scipy lxml nose sphinx hdf5 zlib curl distribute libpng pyzmq
 ```
 log out, log back in, create a terminal using the "iris" environment
 
