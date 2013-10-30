@@ -92,7 +92,8 @@ python setup.py install
 
 Create a terminal using the np17py27-1.5 environment, and then in that terminal, type:
 ```
-conda create -n iris dateutil=1.5 pandas matplotlib netcdf4 ipython shapely cython pip pytz scipy lxml nose sphinx hdf5 zlib curl distribute libpng
+conda create -n iris dateutil=1.5 pandas matplotlib netcdf4 ipython\
+shapely cython pip pytz scipy lxml nose sphinx hdf5 zlib curl distribute libpng
 ```
 log out, log back in, create a terminal using the "iris" environment
 
@@ -112,6 +113,11 @@ tar xvfz proj-4.8.0.tar.gz
 cd proj-4.8.0
 ./configure --prefix=/opt/anaconda/envs/iris
 make install
+
+cd ~/iris
+pip install pyshp
+pip install ./cartopy-0.9.0
+
 ```
 
 
