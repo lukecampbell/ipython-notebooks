@@ -101,10 +101,13 @@ click the gear icon and set the default environment to Iris.
 
 Create a terminal in the "iris environment. 
 
-Then do:
+Create a iris subdirectory to contain all the iris stuff
 ```
 mkdir iris
 cd iris
+```
+Build Cartopy
+```
 wget -O cartopy.v0.9.0.tgz https://github.com/SciTools/cartopy/archive/v0.9.0.tar.gz
 tar xvfz cartopy.v0.9.9.tgz
 
@@ -117,8 +120,21 @@ make install
 cd ~/iris
 pip install pyshp
 pip install ./cartopy-0.9.0
-
 ```
 
+Build Iris
+```
+cd ~/iris
+pip install pyke
+wget ftp://ftp.unidata.ucar.edu/pub/udunits/udunits-2.1.24.tar.gz
+tar xzvf udunits-2.1.24.tar.gz
+cd udunits-2.1.24
+./configure --prefix=/opt/anaconda/envs/iris
+
+wget -O iris.v1.5.1.tgz https://github.com/SciTools/iris/archive/v1.5.1.tar.gz
+tar xvfz iris.v1.5.1.tgz
+cd iris.v1.5.1
+```
+edit the setup.py file to remove the build_ext cmd.
 
 
