@@ -9,6 +9,13 @@
 make install
 ```
 
+## Rich and Ed Campbell's method for building Cartopy and Iris
+1. see https://github.com/esc24/installation-recipes/blob/78e4b70345c0d093bc2a68f747ad464f584f648e/wakari/install.txt for detailed instructions.
+2. I created an Ipython Notebook demonstrating the use of Iris and Cartopy to access forecast model data from the US Integrated Ocean Observing System (US-IOOS) here:
+https://www.wakari.io/sharing/bundle/rsignell/scitools
+
+You should be able to just click the link, copy over the bundle with environment to their Wakari instance (5 min instructional video I made here, in case it's not clear: https://www.youtube.com/watch?v=4NyMWK4as-U)
+
 ## Emilio's method to create an environment for `ulmo`
 1. In Wakari, click the "Terminals" tab, then choose "Shell" from the left dropdown menu, and "np17py27-1.5" from the right dropdown menu.  Then click the "+Tab" button to create a np17py27-1.5 Shell in a new tab.
 
@@ -26,115 +33,5 @@ pip install ulmo   # Successfully installed ulmo appdirs beautifulsoup4 mock sud
 ```
 
 6. Create a notebook and select this new environment from the dropdown inside the notebook page.   When you then share this notebook (by clicking the "Share" button next to the notebook name in the file browser), you will have the opportunity to include the custom environment.
-
-## Rich's method to create an environment for `Cartopy`
-Rich did pretty much the same thing as Emilio with a few differences.  
-
-* A different basic conda environment:
-
-```
-conda create -n ioos_env dateutil=1.5 pandas matplotlib netcdf4 ipython shapely cython pip pytz geos shapely
-```
-
-* Handling of addiitional library dependencies. 
-Cartopy has a dependency on the proj4 library that was not on the system and had to built locally (can't just do sudo install libproj-dev) on wakari.
-So with help from Ed Campbell, in a Wakari shell terminal, I did:
-
-```
-pip install pyshp
-cd $HOME
-mkdir proj4_static
-mkdir ioos
-cd ioos
-wget http://download.osgeo.org/proj/proj-4.8.0.tar.gz
-tar xvfz proj-4.8.0.tar.gz
-cd proj4-4.8.0
-CFLAGS=-fPIC ./configure --disable-shared --prefix=$HOME/proj4_static
-make install
-cd ..
-git clone https://github.com/SciTools/cartopy.git
-cd cartopy
-python setup.py build_ext -L$HOME/proj4_static/lib -I$HOME/proj4_static/include
-python setup.py install
-```
-
-Installing udunits
-
-```
-cd $HOME
-wget ftp://ftp.unidata.ucar.edu/pub/udunits/udunits-2.1.24.tar.gz
-tar xzf udunits-2.1.24.tar.gz
-cd udunits
-./configure --prefix=$HOME/udunits_shared
-make install
-cd $HOME && rm -rf udunits udunits-2.1.24.tar.gz
-```
-
-Installing Iris
-```
-pip install pyke
-cd $HOME
-git clone https://github.com/SciTools/iris.git
-cd iris
-cp lib/iris/etc/site.cfg.template lib/iris/etc/site.cfg
-# **edit lib/iris/etc/site.cfg such that:**
-cat lib/iris/etc/site.cfg
-[System]
-udunits2_path = /user_home/w_pelson/udunits_shared/lib/libudunits2.so
-
-python setup.py std_names
-# Remove the custom build_py command - it is failing for no good reason (bug in Iris/Distutils?)
-python setup.py build
-python setup.py install
-```
-
-# Rich Trying again with Iris:
-
-Create a terminal using the np17py27-1.5 environment, and then in that terminal, type:
-```
-conda create -n iris dateutil=1.5 pandas matplotlib netcdf4 ipython\
-shapely cython pip pytz scipy lxml nose sphinx hdf5 zlib curl distribute libpng pyzmq
-```
-log out, log back in, create a terminal using the "iris" environment
-
-click the gear icon and set the default environment to Iris.
-
-Create a terminal in the "iris environment. 
-
-Create a iris subdirectory to contain all the iris stuff
-```
-mkdir iris
-cd iris
-```
-Build Cartopy
-```
-wget -O cartopy.v0.9.0.tgz https://github.com/SciTools/cartopy/archive/v0.9.0.tar.gz
-tar xvfz cartopy.v0.9.9.tgz
-
-wget http://download.osgeo.org/proj/proj-4.8.0.tar.gz
-tar xvfz proj-4.8.0.tar.gz
-cd proj-4.8.0
-./configure --prefix=/opt/anaconda/envs/iris
-make install
-
-cd ~/iris
-pip install pyshp
-pip install ./cartopy-0.9.0
-```
-
-Build Iris
-```
-cd ~/iris
-pip install pyke
-wget ftp://ftp.unidata.ucar.edu/pub/udunits/udunits-2.1.24.tar.gz
-tar xzvf udunits-2.1.24.tar.gz
-cd udunits-2.1.24
-./configure --prefix=/opt/anaconda/envs/iris
-
-wget -O iris.v1.5.1.tgz https://github.com/SciTools/iris/archive/v1.5.1.tar.gz
-tar xvfz iris.v1.5.1.tgz
-cd iris.v1.5.1
-```
-edit the setup.py file to remove the build_ext cmd.
 
 
