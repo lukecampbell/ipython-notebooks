@@ -9,7 +9,7 @@
 make install
 ```
 
-## Rich and Ed Campbell's method for building Cartopy and Iris
+## Rich and Ed Campbell's method to create a `scitools` environment for Cartopy and Iris
 1. see https://github.com/esc24/installation-recipes/blob/78e4b70345c0d093bc2a68f747ad464f584f648e/wakari/install.txt for detailed instructions.
 2. I created an Ipython Notebook demonstrating the use of Iris and Cartopy to access forecast model data from the US Integrated Ocean Observing System (US-IOOS) here:
 https://www.wakari.io/sharing/bundle/rsignell/scitools
