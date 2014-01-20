@@ -1,5 +1,6 @@
 ## Installing binary libraries shareable with the environment
 (From Rich) Install the binary libraries in the python lib directory for that custom env. So, the steps are:
+
 1. Create "ioos" env
 2. Install binary library:
 ```
@@ -16,6 +17,7 @@ You should be able to just click the link, copy over the bundle with environment
 
 ## Emilio's steps to create an IOOS environment 
 This Python 2.7 / Numpy 1.7 / Anaconda 1.5 Wakari environment includes:
+
 - Base scientific packages: `numpy, scipy, matplotlib, basemap, pandas, netcdf4, hdf5`
 - Base geospatial packages: `gdal/ogr, shapely, pyshp, geos, fiona`
 - IOOS-relevant data and metadata access packages: `OWSLib, paegan, pyoos, ulmo,  SPARQLWrapper, rdfLib`
@@ -30,6 +32,7 @@ conda list -e | tee ioos_em_5.condaspec
 source deactivate
 ```
 Then, to use [this specification](https://github.com/ioos/ipython-notebooks/blob/master/wakarispecs/ioos_em_5.condaspec) to create the new environment `ioos_em_10`:
+
 1. Start a regular shell terminal. Create a new directory to store the environment and everything involving it. Use the spec file to install all conda packages:
 ```
 mkdir $HOME/ioos_em_10_env
