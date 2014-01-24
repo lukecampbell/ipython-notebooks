@@ -3,6 +3,7 @@
 
 1. Create "ioos" env
 2. Install binary library:
+
 ```
 ./configure --prefix=/opt/anaconda/envs/ioos
 make install
@@ -40,15 +41,18 @@ cd $HOME/ioos_em_10_env
 wget https://raw2.github.com/ioos/ipython-notebooks/master/wakarispecs/ioos_em_5.condaspec
 conda create --name ioos_em_10 --file $HOME/ioos_em_5.condaspec
 ```
+
 2. Activate the new environment in the same shell terminal:
 ```
 source activate ioos_em_10
 ```
+
 3. `pip install` paegan and pyoos (will install other dependencies, including OWSLib). Ignore the many warnings that scroll by! Note these must be installed from their github repos.
 ```
 pip install git+https://github.com/asascience-open/paegan.git
 pip install git+https://github.com/asascience-open/pyoos.git
 ```
+
 4. `pip install` other packages, from pypi:
 ```
 pip install SPARQLWrapper
