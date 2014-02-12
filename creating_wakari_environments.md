@@ -60,4 +60,4 @@ pip install ulmo
 pip install pyshp pyke
 ```
 
-That's it. Enjoy. Remember the environment is `ioos_em_10`, unless you changed the name.
+That's it. Enjoy. Remember the environment is `ioos_em_10`, unless you changed the name. You can (install it on Wakari by running this bundle that includes the environment)[https://www.wakari.io/sharing/bundle/emayorga/pyoos_ioos_sos_demo1].
