@@ -6,9 +6,9 @@ A brief list of the packages we've got going and have been able to share with ea
 scipy, numpy, matplotlib, pandas, netcdf4, shapely, OWSLib, lxml, suds, requests, SPARQLWrapper, ulmo, cartopy
 We aren't listing the lower-level dependencies.
 
-* Emilio has an environment that includes all of those packages except cartopy. [Emilio's shared notebooks and bundles](www.wakari.io/emayorga)
+* Emilio has an environment that includes all of those packages except cartopy. [Emilio's shared notebooks and bundles](http://www.wakari.io/emayorga)
 
-* Rich has one with cartopy, but not lxml, suds, requests, SPARQLWrapper, ulmo. [Rich's shared notebooks and bundles](www.wakari.io/rsignell)
+* Rich has one with cartopy, but not lxml, suds, requests, SPARQLWrapper, ulmo. [Rich's shared notebooks and bundles](http://www.wakari.io/rsignell)
 
 * Rich is working on IRIS.
 
