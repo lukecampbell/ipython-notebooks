@@ -1,4 +1,6 @@
 ipython-notebooks
 =================
 
-Ipython Notebooks demonstrating cool things with IOOS data
+IPython Notebooks demonstrating cool things with IOOS data
+
+See [wakari.md](wakari.md) for information on setting up the Wakari IPython environment.
