@@ -1,4 +1,6 @@
-##Emilio's resources:
+## DMAC Webinar on 2014-02-012
+Rich and Emilio did demos using IPython Notebooks to search and access IOOS model and observational data. 
+###Emilio's resources:
 Instructions for building my Wakari environment, and a link to a Wakari notebook that bundles the environment (so you can install it easily):
   https://github.com/ioos/ipython-notebooks/blob/master/creating_wakari_environments.md
 * The 4 notebooks I presented, in the order I presented them:
@@ -12,8 +14,9 @@ Instructions for building my Wakari environment, and a link to a Wakari notebook
 * A tagged entry point to my github notebook gists (which mostly don't include the wakari notebooks):
   * https://www.mygists.info/emiliom
   
-##Rich's resources:
+###Rich's resources:
   Notebooks in the order I presented them:
 * [IOOS Models displayed in Iris and using CSW to query (with environment)](https://www.wakari.io/sharing/bundle/rsignell/IOOS_Models-CSW)
+* Rich's [short YouTube video](http://www.youtube.com/watch?v=4NyMWK4as-U) walking through the steps of loading a shared IPython notebook with environment into Wakari
   
   
