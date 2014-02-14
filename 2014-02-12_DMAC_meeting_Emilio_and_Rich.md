@@ -1,4 +1,4 @@
-## DMAC Webinar on 2014-02-012
+## 2014-02-012 DMAC Webinar: IPython Notebooks, Wakari & IOOS
 Rich and Emilio did demos using IPython Notebooks to search and access IOOS model and observational data. 
 ###Emilio's resources:
 Instructions for building my Wakari environment, and a link to a Wakari notebook that bundles the environment (so you can install it easily):
