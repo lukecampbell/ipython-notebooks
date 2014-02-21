@@ -17,6 +17,8 @@ https://www.wakari.io/sharing/bundle/rsignell/scitools
 You should be able to just click the link, copy over the bundle with environment to their Wakari instance (5 min instructional video I made here, in case it's not clear: https://www.youtube.com/watch?v=4NyMWK4as-U)
 
 ## Emilio's steps to create an IOOS environment 
+*(2/20/2014 update: I'm not sure if the environment name used internally is exposed in notebooks that bundle environments, but I've updated my Wakari environment to pyoos 0.6. The new env is called `ioos_em_11`; the build instructions below will still work, and the new env is bundled with the notebook at the end of this page)*
+
 This Python 2.7 / Numpy 1.7 / Anaconda 1.5 Wakari environment includes:
 
 - Base scientific packages: `numpy, scipy, matplotlib, basemap, pandas, netcdf4, hdf5`
@@ -60,4 +62,4 @@ pip install ulmo
 pip install pyshp pyke
 ```
 
-That's it. Enjoy. Remember the environment is `ioos_em_10`, unless you changed the name. [You can install it on Wakari by running this bundle that includes the environment](https://www.wakari.io/sharing/bundle/emayorga/pyoos_ioos_sos_demo1).
+That's it. Enjoy. Remember the environment is `ioos_em_10`, unless you changed the name. [You can install it on Wakari by running this notebook bundle that includes the environment](https://www.wakari.io/sharing/bundle/emayorga/pyoos_ioos_sos_demo1).
