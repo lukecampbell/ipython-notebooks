@@ -44,8 +44,8 @@ Then, to use [this specification](https://github.com/ioos/ipython-notebooks/blob
 ```
 mkdir $HOME/ioos_em_10_env
 cd $HOME/ioos_em_10_env
-wget https://raw2.github.com/ioos/ipython-notebooks/master/wakarispecs/ioos_em_11.condaspec
-conda create --name ioos_em_10 --file $HOME/ioos_em_5.condaspec
+wget --no-check-certificate https://raw2.github.com/ioos/ipython-notebooks/master/wakarispecs/ioos_em_11.condaspec
+conda create --name ioos_em_10 --file $HOME/ioos_em_10_env/ioos_em_11.condaspec
 ```
 
 2. Activate the new environment in the same shell terminal:
@@ -56,7 +56,7 @@ source activate ioos_em_10
 3. `pip install` paegan and pyoos (will install other dependencies, including OWSLib). Ignore the many warnings that scroll by! Note these must be installed from their github repos.
 ```
 pip install git+https://github.com/asascience-open/paegan.git
-pip install git+https://github.com/asascience-open/pyoos.git
+pip install git+https://github.com/ioos/pyoos.git
 ```
 
 4. `pip install` other packages, from pypi:
