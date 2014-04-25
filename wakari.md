@@ -1,4 +1,4 @@
-# Adventures with Wakari
+# Testing IOOS infrastructure with Wakari
 
 Wakari is a cloud-hosted scientific python environment you can access via your browser.  And pretty reasonable size accounts are totally free.
 
